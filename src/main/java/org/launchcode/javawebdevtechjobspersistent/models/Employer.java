@@ -1,5 +1,6 @@
 package org.launchcode.javawebdevtechjobspersistent.models;
 
+import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
@@ -11,7 +12,7 @@ public class Employer extends AbstractEntity {
     private String location;
 
     public String getLocation() {
-        return location
+        return location;
     }
 
     public void setLocation(String location) {
