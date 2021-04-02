@@ -12,12 +12,18 @@ import java.util.List;
 public class Employer extends AbstractEntity {
 
     @Size(min = 1, max = 85)
-    @NotBlank
+    @NotBlank(message = "Location is required")
     private String location;
 
     @OneToMany
     @JoinColumn(name = "employer_id")
     private List<Job> jobs=new ArrayList<>();
+
+    public Employer(String location) {
+        this.location = location;
+    }
+
+    public Employer(){}
 
     public String getLocation() {
         return location;
@@ -26,7 +32,5 @@ public class Employer extends AbstractEntity {
     public void setLocation(String location) {
         this.location = location;
     }
-
-    public Employer(){}
 
 }
